@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +6,115 @@
     <link rel="stylesheet" href="./src/style.css" />
     <title>My Store</title>
   </head>
-  <body>
-    <h1>Hello World</h1>
+  <svg class="hidden">
+    <symbol
+      id="cart"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+      />
+    </symbol>
+  </svg>
+  <body class="mx-auto max-w-7xl">
+    <!-- header -->
+    <header
+      class="flex min-h-24 flex-wrap items-center justify-between gap-4 p-4"
+    >
+      <h1 class="cursor-default text-2xl font-bold text-blue-600">MY STORE</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <a class="hover:text-blue-800" href=".\index.html"><li>Home</li></a>
+          <a class="hover:text-blue-800" href="#"><li>Shop</li></a>
+          <a class="hover:text-blue-800" href="#"><li>About</li></a>
+          <a class="hover:text-blue-800" href="#"><li>Contact</li></a>
+        </ul>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href=".\cart.html">
+          <svg class="h-6 w-6 cursor-pointer">
+            <use href="#cart"></use>
+          </svg>
+        </a>
+        <a
+          class="flex rounded bg-blue-600 px-4 py-2 text-white transition-all hover:bg-blue-800"
+          href="#"
+          >Log In</a
+        >
+      </div>
+    </header>
+    <main>
+      <!-- hero section -->
+      <section
+        class="flex h-96 max-w-7xl items-center justify-center bg-blue-600 text-white"
+      >
+        <h2 class="text-4xl font-black">My Store</h2>
+      </section>
+      <!-- shop -->
+      <section class="mt-12 flex flex-wrap items-center justify-between gap-6">
+        <div class="w-72 rounded-2xl p-4 shadow hover:shadow-md transition-all">
+          <img src="./public/img/products/image01.jpg" alt="" />
+          <h3 class="my-4">
+            Lenovo IdeaPad 3 Chromebook 15IJL6 82N4003YMH - 15.6 inch
+          </h3>
+          <div class="flex items-center justify-between">
+            <button class="rounded hover:bg-blue-800 cursor-pointer transition-all bg-blue-600 px-2 py-1 text-white">
+              Add To Cart
+            </button>
+            <p class="text-right">$ 29,900</p>
+          </div>
+        </div>
+        <div class="w-72 rounded-2xl p-4 shadow hover:shadow-md transition-all">
+          <img src="./public/img/products/image02.jpg" alt="" />
+          <h3 class="my-4">
+            Lenovo IdeaPad 3 Chromebook 15IJL6 82N4003YMH - 15.6 inch
+          </h3>
+          <div class="flex items-center justify-between">
+            <button class="rounded hover:bg-blue-800 cursor-pointer transition-all bg-blue-600 px-2 py-1 text-white">
+              Add To Cart
+            </button>
+            <p class="text-right">$ 29,900</p>
+          </div>
+        </div>
+        <div class="w-72 rounded-2xl p-4 shadow hover:shadow-md transition-all">
+          <img src="./public/img/products/image03.jpg" alt="" />
+          <h3 class="my-4">
+            Lenovo IdeaPad 3 Chromebook 15IJL6 82N4003YMH - 15.6 inch
+          </h3>
+          <div class="flex items-center justify-between">
+            <button class="rounded hover:bg-blue-800 cursor-pointer transition-all bg-blue-600 px-2 py-1 text-white">
+              Add To Cart
+            </button>
+            <p class="text-right">$ 29,900</p>
+          </div>
+        </div>
+        <div class="w-72 rounded-2xl p-4 shadow hover:shadow-md transition-all">
+          <img src="./public/img/products/image04.jpg" alt="" />
+          <h3 class="my-4">
+            Lenovo IdeaPad 3 Chromebook 15IJL6 82N4003YMH - 15.6 inch
+          </h3>
+          <div class="flex items-center justify-between">
+            <button class="rounded hover:bg-blue-800 cursor-pointer transition-all bg-blue-600 px-2 py-1 text-white">
+              Add To Cart
+            </button>
+            <p class="text-right">$ 29,900</p>
+          </div>
+      </section>
+      <!-- pagination -->
+       <div class="flex justify-center gap-1.5 items-center mt-8">
+        <div class="py-0.5 cursor-pointer transition-all hover:bg-blue-800 px-2 text-white bg-blue-600 rounded">1</div>
+        <div class="py-0.5 cursor-pointer transition-all hover:bg-blue-800 px-2 text-white bg-blue-600 rounded">2</div>
+        <div class="py-0.5 cursor-pointer transition-all hover:bg-blue-800 px-2 text-white bg-blue-600 rounded">3</div>
+       </div>
+       
+    </main>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

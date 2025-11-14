@@ -10,13 +10,12 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
-  "dependencies": {},
   "devDependencies": {
-    "vite": "^7.2.2",
-    "tailwindcss": "^4.1.17",
     "@tailwindcss/vite": "^4.1.17",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
-    "gh-pages": "^6.3.0"
+    "tailwindcss": "^4.1.17",
+    "vite": "^7.2.2"
   }
 }
