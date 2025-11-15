@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Store</title>
-    <script type="module" crossorigin src="/my-store/assets/index-RCwycrfR.js"></script>
-    <link rel="stylesheet" crossorigin href="/my-store/assets/index-CwwG3l8b.css">
+    <script type="module" crossorigin src="/my-store/assets/index-CZCVbf2v.js"></script>
+    <link rel="stylesheet" crossorigin href="/my-store/assets/index-7d5eeGwn.css">
   </head>
+  <!-- svgs -->
   <svg class="hidden">
     <symbol
       id="cart"
@@ -24,16 +25,42 @@
       />
     </symbol>
   </svg>
-  <body class="mx-auto max-w-7xl p-4">
+  <body class="mx-auto max-w-7xl bg-gray-100 p-4">
     <!-- header -->
-    <header class="flex min-h-16 flex-wrap items-center justify-between gap-4">
+    <header
+      class="mb-4 flex min-h-16 flex-wrap items-center justify-between gap-4 rounded bg-white px-4 shadow-md"
+    >
       <h1 class="cursor-default text-2xl font-black text-blue-600">MY STORE</h1>
-      <div class="flex items-center gap-4">
-        <a href=".\cart.html">
-          <svg class="h-6 w-6 cursor-pointer">
-            <use href="#cart"></use>
-          </svg>
-        </a>
+
+      <div class="relative flex items-center gap-4">
+        <svg id="basketBtn" class="h-6 w-6 cursor-pointer">
+          <use href="#cart"></use>
+        </svg>
+
+        <!-- basket -->
+        <div
+          id="basketContainer"
+          class="absolute top-10 -right-4 flex hidden min-h-40 w-96 flex-col justify-center gap-2 rounded border-t-2 border-blue-600 bg-white shadow-2xl"
+        >
+          <!-- import with JS -->
+          <div id="basketUserElem" class="max-h-52 overflow-auto"></div>
+          <!-- totaL PRICE and confirm btn section -->
+          <div
+            id="isntEmpty"
+            class="flex w-full items-center justify-center gap-4 border-t border-dashed border-gray-400 py-2"
+          >
+            <p>Total Price: <span id="totalPriceElem"></span></p>
+            <button
+              class="cursor-pointer rounded bg-blue-600 px-2 py-1 text-white"
+            >
+              Confirm
+            </button>
+          </div>
+          <!-- if basket empty -->
+          <div id="isEmpty" class="text-center">
+            <p>Your Basket Is Empty</p>
+          </div>
+        </div>
       </div>
     </header>
     <!-- main -->
@@ -46,22 +73,11 @@
         <!-- import with JS -->
       </section>
       <!-- pagination -->
-      <div class="mt-8 flex items-center justify-center gap-1.5">
-        <div
-          class="cursor-pointer rounded bg-blue-600 px-2 py-0.5 text-white transition-all hover:bg-blue-800"
-        >
-          1
-        </div>
-        <div
-          class="cursor-pointer rounded bg-blue-600 px-2 py-0.5 text-white transition-all hover:bg-blue-800"
-        >
-          2
-        </div>
-        <div
-          class="cursor-pointer rounded bg-blue-600 px-2 py-0.5 text-white transition-all hover:bg-blue-800"
-        >
-          3
-        </div>
+      <div
+        id="paginationElem"
+        class="mt-8 flex items-center justify-center gap-1.5"
+      >
+        <!-- import with JS -->
       </div>
     </main>
   </body>
