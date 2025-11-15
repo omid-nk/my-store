@@ -85,12 +85,6 @@ const products = [
   }
 ]
 
-// add to basket Btn
-function addToCart() {
-  console.log("click shod")
-}
-window.addToCart = addToCart
-
 // products add to DOM
 const productsElem = document.querySelector("#productsElem")
 let page = 1
@@ -112,12 +106,12 @@ function showPageProducts() {
       </h3>
       <div class="flex items-center justify-between">
       <button
-      onclick="addToCart()"
+      onclick="addToCart(${product.id},event)"
       class="cursor-pointer rounded bg-blue-600 px-2 py-1 text-white transition-all hover:bg-blue-800"
       >
       Add To Cart
       </button>
-      <p class="text-right cursor-default">$${product.price.toLocaleString()}</p>
+      <p class="text-right cursor-default font-bold">$${product.price.toLocaleString()}</p>
       </div>
       </div>`
     )
@@ -155,3 +149,67 @@ function changePageHandler(userSelectedPage) {
 
 showPageProducts()
 genPagination()
+
+// show basket
+const basketBtn = document.querySelector("#basketBtn")
+const basketContainer = document.querySelector("#basketContainer")
+basketBtn.addEventListener("click", () => {
+  basketContainer.classList.toggle("hidden")
+})
+
+// user basket
+const userBasket = []
+
+// add to basket Btn
+function addToCart(productId, e) {
+  const isInBasket = userBasket.some((item) => item.id === productId)
+  if (!isInBasket) {
+    const product = products.find((item) => item.id === productId)
+    userBasket.push(product)
+    appendBasketToDOM()
+  }
+}
+window.addToCart = addToCart
+
+const basketUserElem = document.querySelector("#basketUserElem")
+function appendBasketToDOM() {
+  basketUserElem.innerHTML = ""
+  userBasket.forEach((product) => {
+    basketUserElem.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div
+      class="flex items-center justify-between gap-2 border-b border-gray-200 p-2"
+      >
+      <div class="w-16">
+      <img src="${product.cover}" alt="" />
+      </div>
+      <div class="">
+      <h3 class="text-sm">${product.title}</h3>
+      <p class="text-sm">$${product.price}</p>
+      </div>
+      <div class="flex items-center gap-1 text-white">
+      <button class="cursor-pointer px-1 text-red-700">X</button>
+      </div>
+      </div>
+      `
+    )
+    isBasketEmpty()
+  })
+}
+
+// check basket is empty or not
+const isntEmpty = document.querySelector("#isntEmpty")
+const isEmpty = document.querySelector("#isEmpty")
+function isBasketEmpty() {
+  if (userBasket.length > 0) {
+    isEmpty.classList.add("hidden")
+    isntEmpty.classList.remove("hidden")
+  } else {
+    isEmpty.classList.remove("hidden")
+    isntEmpty.classList.add("hidden")
+  }
+}
+isBasketEmpty()
+
+// delete product from basket
