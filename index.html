@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./src/style.css" />
     <title>My Store</title>
   </head>
+  <!-- svgs -->
   <svg class="hidden">
     <symbol
       id="cart"
@@ -23,97 +24,36 @@
       />
     </symbol>
   </svg>
-  <body class="mx-auto max-w-7xl">
+  <body class="mx-auto max-w-7xl bg-gray-100 p-4">
     <!-- header -->
     <header
-      class="flex min-h-24 flex-wrap items-center justify-between gap-4 p-4"
+      class="mb-4 flex min-h-16 flex-wrap items-center justify-between gap-4 rounded bg-white px-4 shadow-md"
     >
-      <h1 class="cursor-default text-2xl font-bold text-blue-600">MY STORE</h1>
-      <nav>
-        <ul class="flex gap-6">
-          <a class="hover:text-blue-800" href=".\index.html"><li>Home</li></a>
-          <a class="hover:text-blue-800" href="#"><li>Shop</li></a>
-          <a class="hover:text-blue-800" href="#"><li>About</li></a>
-          <a class="hover:text-blue-800" href="#"><li>Contact</li></a>
-        </ul>
-      </nav>
+      <h1 class="cursor-default text-2xl font-black text-blue-600">MY STORE</h1>
       <div class="flex items-center gap-4">
         <a href=".\cart.html">
           <svg class="h-6 w-6 cursor-pointer">
             <use href="#cart"></use>
           </svg>
         </a>
-        <a
-          class="flex rounded bg-blue-600 px-4 py-2 text-white transition-all hover:bg-blue-800"
-          href="#"
-          >Log In</a
-        >
       </div>
     </header>
+    <!-- main -->
     <main>
-      <!-- hero section -->
-      <section
-        class="flex h-96 max-w-7xl items-center justify-center bg-blue-600 text-white"
-      >
-        <h2 class="text-4xl font-black">My Store</h2>
-      </section>
       <!-- shop -->
-      <section class="mt-12 flex flex-wrap items-center justify-between gap-6">
-        <div class="w-72 rounded-2xl p-4 shadow hover:shadow-md transition-all">
-          <img src="./public/img/products/image01.jpg" alt="" />
-          <h3 class="my-4">
-            Lenovo IdeaPad 3 Chromebook 15IJL6 82N4003YMH - 15.6 inch
-          </h3>
-          <div class="flex items-center justify-between">
-            <button class="rounded hover:bg-blue-800 cursor-pointer transition-all bg-blue-600 px-2 py-1 text-white">
-              Add To Cart
-            </button>
-            <p class="text-right">$ 29,900</p>
-          </div>
-        </div>
-        <div class="w-72 rounded-2xl p-4 shadow hover:shadow-md transition-all">
-          <img src="./public/img/products/image02.jpg" alt="" />
-          <h3 class="my-4">
-            Lenovo IdeaPad 3 Chromebook 15IJL6 82N4003YMH - 15.6 inch
-          </h3>
-          <div class="flex items-center justify-between">
-            <button class="rounded hover:bg-blue-800 cursor-pointer transition-all bg-blue-600 px-2 py-1 text-white">
-              Add To Cart
-            </button>
-            <p class="text-right">$ 29,900</p>
-          </div>
-        </div>
-        <div class="w-72 rounded-2xl p-4 shadow hover:shadow-md transition-all">
-          <img src="./public/img/products/image03.jpg" alt="" />
-          <h3 class="my-4">
-            Lenovo IdeaPad 3 Chromebook 15IJL6 82N4003YMH - 15.6 inch
-          </h3>
-          <div class="flex items-center justify-between">
-            <button class="rounded hover:bg-blue-800 cursor-pointer transition-all bg-blue-600 px-2 py-1 text-white">
-              Add To Cart
-            </button>
-            <p class="text-right">$ 29,900</p>
-          </div>
-        </div>
-        <div class="w-72 rounded-2xl p-4 shadow hover:shadow-md transition-all">
-          <img src="./public/img/products/image04.jpg" alt="" />
-          <h3 class="my-4">
-            Lenovo IdeaPad 3 Chromebook 15IJL6 82N4003YMH - 15.6 inch
-          </h3>
-          <div class="flex items-center justify-between">
-            <button class="rounded hover:bg-blue-800 cursor-pointer transition-all bg-blue-600 px-2 py-1 text-white">
-              Add To Cart
-            </button>
-            <p class="text-right">$ 29,900</p>
-          </div>
+      <section
+        id="productsElem"
+        class="flex flex-wrap items-stretch justify-center gap-6"
+      >
+        <!-- import with JS -->
       </section>
       <!-- pagination -->
-       <div class="flex justify-center gap-1.5 items-center mt-8">
-        <div class="py-0.5 cursor-pointer transition-all hover:bg-blue-800 px-2 text-white bg-blue-600 rounded">1</div>
-        <div class="py-0.5 cursor-pointer transition-all hover:bg-blue-800 px-2 text-white bg-blue-600 rounded">2</div>
-        <div class="py-0.5 cursor-pointer transition-all hover:bg-blue-800 px-2 text-white bg-blue-600 rounded">3</div>
-       </div>
-       
+      <div
+        id="paginationElem"
+        class="mt-8 flex items-center justify-center gap-1.5"
+      >
+        <!-- import with JS -->
+      </div>
     </main>
     <script type="module" src="./src/main.js"></script>
   </body>

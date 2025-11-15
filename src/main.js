@@ -84,3 +84,74 @@ const products = [
     path: "./laptop12/"
   }
 ]
+
+// add to basket Btn
+function addToCart() {
+  console.log("click shod")
+}
+window.addToCart = addToCart
+
+// products add to DOM
+const productsElem = document.querySelector("#productsElem")
+let page = 1
+const productPerPage = 4
+
+function showPageProducts() {
+  let startIndex = (page - 1) * productPerPage
+  let lastIndex = startIndex + productPerPage
+
+  const showProducts = products.slice(startIndex, lastIndex)
+  productsElem.innerHTML = ""
+  showProducts.forEach((product) => {
+    productsElem.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="flex flex-col justify-between max-w-72 rounded p-4 shadow-md transition-all bg-white">
+      <img src="${product.cover}" alt="" />
+      <h3 class="my-4 cursor-default">
+      ${product.title}
+      </h3>
+      <div class="flex items-center justify-between">
+      <button
+      onclick="addToCart()"
+      class="cursor-pointer rounded bg-blue-600 px-2 py-1 text-white transition-all hover:bg-blue-800"
+      >
+      Add To Cart
+      </button>
+      <p class="text-right cursor-default">$${product.price.toLocaleString()}</p>
+      </div>
+      </div>`
+    )
+  })
+}
+
+// generate pagination
+const paginationElem = document.querySelector("#paginationElem")
+function genPagination() {
+  const pageCount = products.length / productPerPage
+  for (let i = 0; i < pageCount; i++) {
+    paginationElem.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div
+      class="${i === 0 ? "active" : ""} cursor-pointer rounded bg-blue-600 px-2 py-0.5 text-white transition-all hover:bg-blue-800"
+      onclick="changePageHandler(${i}+1)"
+       >
+      ${i + 1}
+      </div>
+      `
+    )
+  }
+}
+
+// changePageHandler
+window.changePageHandler = changePageHandler
+function changePageHandler(userSelectedPage) {
+  page = userSelectedPage
+  showPageProducts()
+  const paginationBtns = document.querySelectorAll("#paginationElem div")
+  paginationBtns.forEach((btn) => btn.classList.remove("active"))
+  paginationBtns[userSelectedPage - 1].classList.add("active")
+}
+
+showPageProducts()
+genPagination()
