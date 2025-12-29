@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+.nav-item::after {
+  content: " ";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 0%;
+  height: 2px;
+  margin-top: 6px;
+  background: #89c6be;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
