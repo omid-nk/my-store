@@ -17,3 +17,11 @@
 .nav-item:hover::after {
   width: 100%;
 }
+
+.swiper-bullet {
+  @apply h-3 w-3 scale-75 cursor-pointer rounded-full bg-gray-400 transition-all duration-300;
+}
+
+.swiper-bullet-active {
+  @apply scale-110 bg-emerald-500 shadow-md;
+}

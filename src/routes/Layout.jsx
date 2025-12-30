@@ -5,7 +5,7 @@ import Footer from "../features/footer/Footer";
 const Layout = () => (
   <>
     <Header />
-    <main className="container mx-auto py-10">
+    <main className="mx-auto max-w-7xl">
       <Outlet />
     </main>
     <Footer />
